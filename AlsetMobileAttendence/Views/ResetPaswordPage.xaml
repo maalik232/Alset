@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Alset_Attendence_System.Views.ResetPaswordPage"
+              BackgroundColor="White"
+              NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout>
+          
+                <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                    <BoxView HeightRequest="10"/>
+                    <Label HorizontalOptions="Center"  Text="Alset" FontSize="Header" TextColor="#088da5"/>
+                    <Frame  BackgroundColor="#ff2982" HasShadow="False" WidthRequest="400">
+                        <StackLayout Orientation="Vertical" Spacing="10">
+                            <Entry 
+                            x:Name="NewPassword"   
+                            Placeholder="New Password"   
+                            PlaceholderColor="White" 
+                            HeightRequest="40"    
+                            TextColor="White"
+                            IsPassword="True" 
+                            Text="{Binding Password}"/>
+                            <Entry 
+                            x:Name="ConfirmNewPassword"  
+                            Placeholder="Confirm New Password"   
+                            PlaceholderColor="White" 
+                            HeightRequest="40"   
+                            IsPassword="True"  
+                           TextColor="White"
+                           Text="{Binding ConfirmPassword}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button Clicked="ResertPasword_Clicked" Text="Confirm Password" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" 
+                    Command="{Binding ResetPaswordCommand}"    
+                    HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+                </StackLayout>
+                <ActivityIndicator x:Name="loader" HorizontalOptions="Center" VerticalOptions="Center" IsRunning="True" IsVisible="{Binding Loader}" Color="#088da5"></ActivityIndicator>
+           
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
